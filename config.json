@@ -1,0 +1,16 @@
+ {
+    "Konfiguracja": {
+        "token": "",
+        "prefix": "",
+        "name": "",
+        "color": ""
+    },
+    "Opcje": {
+        "LogChannelID": "",
+        "BotID": "",
+        "Invite": "",
+        "AdminIDRole": "",
+        "AnnouncementChannelID": "",
+        "SuggestionChannelID": "" 
+    }
+}
