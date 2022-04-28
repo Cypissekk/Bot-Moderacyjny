@@ -18,8 +18,11 @@ Oraz **Funkcje** jaka jest:
 # Instalacja
 W terminalu napisz komendy:
 `git clone https://github.com/Cypissekk/Bot-Moderacyjny`
+
 `npm install`
+
 **Wypelnij Config w pliku `config.json`**
+
 `node .`
 
 **Gotowe!**
