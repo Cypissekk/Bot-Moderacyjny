@@ -10,8 +10,6 @@ module.exports = {
   },
   run: async (client, message, args) => {
   
-
-
     const wrong = new MessageEmbed()
     .setColor(`${config["Konfiguracja"].color}`)
     .setAuthor(`${config["Konfiguracja"].name} - Blad!`)

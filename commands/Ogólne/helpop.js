@@ -9,7 +9,6 @@ module.exports = {
   },
   run: async (client, message, args) => {
 
-
     const wrong = new MessageEmbed()
     .setColor(`${config["Konfiguracja"].color}`)
     .setAuthor(`${config["Konfiguracja"].name} - Blad!`)
@@ -17,15 +16,29 @@ module.exports = {
     .setFooter(`🦊 ▸ ${config["Konfiguracja"].name} | Send`);
 
     if (args.length < 1) return message.channel.send(wrong);
+
+    let helpop = args.splice(0).join(" ")
     
         const send = new MessageEmbed()
+            .setTitle("Helpop")
             .setColor(`${config["Konfiguracja"].color}`)
             .setAuthor(client.user.username, client.user.displayAvatarURL())
-            .setDescription(args.splice(0).join(" "))
+            .setDescription(helpop)
             .setThumbnail("https://cdn.discordapp.com/avatars/"+message.author.id+"/"+message.author.avatar+".jpeg");
-            client.users.fetch('539069664630669313', false).then((user) => {
+
+        const log = new MessageEmbed()
+            .setAuthor('Nowa wiadomosc helpop') 
+            .setColor(`${config["Konfiguracja"].color}`)
+            .setDescription(`Nowa wiadomosc helpop\n> Uzytkownik: **${message.author}**\n> Wiadomosc: ${helpop}`)
+            .setFooter('Log')
+
+
+            client.users.fetch(`${config["Opcje"].OwnerID}`, false).then((user) => {
                 user.send(send);
                });
+               client.channels.cache.get(`${config["Opcje"].LogChannelID}`).send({ embed: log })
         }
 
 }
+
+
